@@ -9,6 +9,8 @@ Turn several REST endpoints into one discoverable, developer-friendly data exper
 <p>
   <a href="https://github.com/ROSHINI-CLOUD/APIForgeportal"><strong>Repository</strong></a>
   ·
+  <a href="docs/APIForge-Portal-PRD.md"><strong>PRD</strong></a>
+  ·
   <a href="#quick-start"><strong>Quick start</strong></a>
   ·
   <a href="#how-it-works"><strong>How it works</strong></a>
@@ -20,6 +22,8 @@ Turn several REST endpoints into one discoverable, developer-friendly data exper
 
 
 ## What is APIForge?
+
+The complete product requirements are documented in [docs/APIForge-Portal-PRD.md](docs/APIForge-Portal-PRD.md).
 
 APIForge Portal is a laptop-first, responsive web app for frontend developers and API teams.
 It reads sample JSON responses from REST endpoints, generates a clear GraphQL-style schema,
