@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">APIForge Portal architecture</title>
+  <desc id="desc">API team and frontend developer connect through APIForge Portal, which transforms REST samples into a schema and resolves queries into REST calls.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="portal" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#020617" flood-opacity=".45"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#a5b4fc"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="520" rx="30" fill="url(#bg)"/>
+  <circle cx="1120" cy="70" r="160" fill="#4f46e5" opacity=".13"/>
+  <circle cx="90" cy="470" r="180" fill="#7c3aed" opacity=".10"/>
+
+  <text x="70" y="62" fill="#c7d2fe" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2">APIFORGE PORTAL · HIGH-LEVEL ARCHITECTURE</text>
+  <text x="70" y="103" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="800">One data experience across many REST endpoints</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="160" width="245" height="270" rx="22" fill="url(#card)" stroke="#334155"/>
+    <circle cx="122" cy="212" r="25" fill="#312e81"/>
+    <path d="M112 211h20M116 203v17M124 203v17" stroke="#c4b5fd" stroke-width="3" stroke-linecap="round"/>
+    <text x="165" y="207" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="800">API team</text>
+    <text x="165" y="230" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="13">Defines the data</text>
+    <g font-family="Inter,Arial,sans-serif" font-size="14" fill="#e2e8f0">
+      <text x="102" y="286">• Adds REST sources</text>
+      <text x="102" y="320">• Supplies sample JSON</text>
+      <text x="102" y="354">• Reviews generated schema</text>
+      <text x="102" y="388">• Publishes versions</text>
+    </g>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="417" y="145" width="366" height="300" rx="26" fill="url(#portal)"/>
+    <rect x="442" y="170" width="316" height="54" rx="14" fill="#ffffff" opacity=".12"/>
+    <circle cx="477" cy="197" r="16" fill="#ffffff" opacity=".92"/>
+    <path d="M469 197h16M477 189v16" stroke="#4f46e5" stroke-width="3" stroke-linecap="round"/>
+    <text x="507" y="204" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="800">APIForge Portal</text>
+    <g font-family="Inter,Arial,sans-serif">
+      <text x="468" y="267" fill="#eef2ff" font-size="15" font-weight="700">1 · Transform samples into a schema</text>
+      <text x="468" y="306" fill="#eef2ff" font-size="15" font-weight="700">2 · Explore and validate queries</text>
+      <text x="468" y="345" fill="#eef2ff" font-size="15" font-weight="700">3 · Resolve queries into REST calls</text>
+      <text x="468" y="384" fill="#c7d2fe" font-size="14">Browser-only · Mock or Live mode</text>
+    </g>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="885" y="160" width="245" height="270" rx="22" fill="url(#card)" stroke="#334155"/>
+    <circle cx="937" cy="212" r="25" fill="#164e63"/>
+    <path d="M926 215c6-12 16-12 22 0M930 224h14M937 198v7" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round"/>
+    <text x="980" y="207" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="800">Frontend dev</text>
+    <text x="980" y="230" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="13">Uses the data</text>
+    <g font-family="Inter,Arial,sans-serif" font-size="14" fill="#e2e8f0">
+      <text x="917" y="286">• Searches published fields</text>
+      <text x="917" y="320">• Runs one unified query</text>
+      <text x="917" y="354">• Sees calls and errors</text>
+      <text x="917" y="388">• Saves a fetch snippet</text>
+    </g>
+  </g>
+
+  <path d="M315 295 C355 295 372 295 417 295" fill="none" stroke="#a5b4fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M783 295 C826 295 845 295 885 295" fill="none" stroke="#a5b4fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="340" y="278" fill="#c7d2fe" font-family="Inter,Arial,sans-serif" font-size="13">samples + rules</text>
+  <text x="805" y="278" fill="#c7d2fe" font-family="Inter,Arial,sans-serif" font-size="13">schema + results</text>
+
+  <text x="70" y="486" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="12">REST sources remain separate behind the portal; the developer gets one clear, trimmed response.</text>
+</svg>
