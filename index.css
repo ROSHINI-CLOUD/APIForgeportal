@@ -164,7 +164,13 @@ textarea:focus {
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
-    padding: 24px 6%;
+    padding: 18px 6%;
+}
+
+.simple-header .header-note {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 12px;
 }
 
 /* Centers the login content and gives it comfortable space. */
@@ -172,75 +178,125 @@ textarea:focus {
     /* Warm light at the top with a faint texture underneath. */
     background:
         radial-gradient(ellipse at 24% 8%, #ee82482b, transparent 60%) top / 100% 480px no-repeat,
-        repeating-linear-gradient(120deg, #ffffff04 0 1px, transparent 1px 5px) top / 100% 280px no-repeat;
+        repeating-linear-gradient(120deg, #ffffff03 0 1px, transparent 1px 5px);
     margin: auto;
     max-width: 1060px;
-    padding: 100px 6% 120px;
+    padding: 62px 6% 48px;
 }
 
-/* Limits the login heading width for easy reading. */
+/* Keeps the example beside the introduction when there is room. */
 .login-intro {
-    max-width: 700px;
+    align-items: center;
+    display: grid;
+    gap: 28px;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 }
 
 /* Styles the main login heading. */
 .login-intro h1 {
-    font-size: 64px;
-    letter-spacing: -3px;
-    margin-bottom: 22px;
+    font-size: clamp(36px, 5.7vw, 64px);
+    letter-spacing: -0.045em;
+    margin-bottom: 16px;
+}
+
+.login-intro h1 span {
+    color: #f4a475;
 }
 
 /* Styles the login description. */
-.login-intro > p:last-child {
+.login-intro p {
     color: var(--muted);
     font-size: 17px;
-    max-width: 560px;
+    max-width: 440px;
+}
+
+.hero-example {
+    background: #1a1816;
+    border: 1px solid #51392b;
+    border-radius: 24px;
+    min-width: 0;
+    padding: 16px 20px;
+}
+
+.hero-example figcaption {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.hero-example pre {
+    background: none;
+    border: 0;
+    font-size: 13px;
+    padding: 0;
+    white-space: pre;
+}
+
+.hero-example code span {
+    color: #f4a475;
 }
 
 /* Places the role cards next to each other. */
 .role-cards {
     display: flex;
     gap: 18px;
-    margin-top: 55px;
+    margin-top: 34px;
 }
 
 /* Styles each role card. */
 .role-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 13px;
-    padding: 28px;
-    width: 50%;
+    background: radial-gradient(ellipse at top left, #ee82481c, transparent 65%), var(--surface);
+    border: 1px solid #543d31;
+    border-radius: 28px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px;
 }
 
 /* Shows the light card variation for the second role. */
 .light-card {
-    background: var(--surface-light);
+    background: linear-gradient(145deg, #f5eada, #e8d4bd);
+    border-color: #f0ddc8;
     color: var(--background);
 }
 
-/* Styles the small number on a role card. */
-.card-number {
-    background: var(--orange);
-    border-radius: 6px;
-    color: var(--background);
-    display: inline-block;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 7px 9px;
+.role-icon {
+    background: #ee82481a;
+    border-radius: 13px;
+    color: #f4a475;
+    height: 40px;
+    padding: 9px;
+    width: 40px;
+}
+
+.light-card .role-icon {
+    background: #0d0d0c12;
+    color: #633b25;
 }
 
 /* Styles each role title. */
 .role-card h2 {
-    font-size: 27px;
-    margin: 30px 0 10px;
+    font-size: 25px;
+    margin: 16px 0 8px;
 }
 
 /* Styles each role description. */
 .role-card p {
     color: var(--muted);
-    margin-bottom: 28px;
-    min-height: 48px;
+    margin-bottom: 20px;
+}
+
+.role-card .button {
+    align-self: flex-start;
+    border-radius: 999px;
+    margin-top: auto;
+    text-align: left;
+}
+
+.role-card .button span {
+    margin-left: 6px;
 }
 
 /* Makes description text readable on the light card. */
@@ -1174,10 +1230,17 @@ th {
         flex-direction: column;
     }
 
-    /* Makes the login heading fit a phone. */
-    .login-intro h1 {
-        font-size: 45px;
-        letter-spacing: -2px;
+    .login-main {
+        padding-top: 30px;
+    }
+
+    .login-intro {
+        gap: 18px;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .role-cards {
+        margin-top: 20px;
     }
 
     /* Stacks the role cards. */

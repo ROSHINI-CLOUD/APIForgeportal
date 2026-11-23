@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APIForge Portal</title>
-    <link rel="stylesheet" href="index.css?v=10">
+    <link rel="stylesheet" href="index.css?v=11">
 </head>
 
 <body class="login-page" data-page="login">
@@ -20,27 +20,37 @@
     <main class="login-main">
         <!-- Short product introduction. -->
         <section class="login-intro">
-            <p class="page-label">APIForge Portal</p>
-            <h1>Connect REST data with one simple query.</h1>
-            <p>Choose a demo role to manage API sources or explore the published schema.</p>
+            <div>
+                <h1>One query.<br><span>Multiple REST APIs.</span></h1>
+                <p>Build a shared schema from REST endpoints, then query the fields your app needs.</p>
+            </div>
+            <figure class="hero-example">
+                <figcaption>Example query</figcaption>
+                <pre><code>{
+  <span>user</span>(id: 1) {
+    name
+    <span>posts</span> { title }
+  }
+}</code></pre>
+            </figure>
         </section>
 
         <!-- These two cards are the two users described in the PRD. -->
         <section class="role-cards" aria-label="Choose a demo role">
             <!-- API team role card. -->
             <article class="role-card">
-                <span class="card-number">01</span>
+                <svg class="role-icon" aria-hidden="true"><use href="nav-icons.svg#schema"></use></svg>
                 <h2>API team</h2>
                 <p>Register REST sources, generate schemas, and publish changes.</p>
-                <button class="button" type="button" data-role="api">Continue as API team</button>
+                <button class="button" type="button" data-role="api">Continue as API team <span aria-hidden="true">→</span></button>
             </article>
 
             <!-- Frontend developer role card. -->
             <article class="role-card light-card">
-                <span class="card-number">02</span>
+                <svg class="role-icon" aria-hidden="true"><use href="nav-icons.svg#playground"></use></svg>
                 <h2>Frontend developer</h2>
                 <p>Browse the schema, run a query, and copy a fetch example.</p>
-                <button class="button dark-button" type="button" data-role="frontend">Continue as frontend developer</button>
+                <button class="button dark-button" type="button" data-role="frontend">Continue as frontend developer <span aria-hidden="true">→</span></button>
             </article>
         </section>
 
