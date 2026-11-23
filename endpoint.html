@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page information and the shared beginner CSS file. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endpoint editor | APIForge Portal</title>
+    <link rel="stylesheet" href="index.css?v=9">
+</head>
+
+<body class="app-page" data-page="endpoint">
+    <!-- Shared MVP navigation. -->
+    <aside class="sidebar">
+        <button class="sidebar-toggle" type="button" aria-controls="sidebar-content" aria-expanded="true" aria-label="Collapse navigation" hidden>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2.5" y="3.5" width="15" height="13" rx="2" />
+                <path d="M8 3.5v13" />
+            </svg>
+        </button>
+        <div class="sidebar-content" id="sidebar-content">
+            <a class="logo" href="index.html">APIForge <span>Portal</span></a>
+            <p class="sidebar-role" data-session-name>Demo user</p>
+            <nav class="side-nav" aria-label="Main navigation">
+                <p class="nav-group-label" data-api-only>API management</p>
+                <a class="active" aria-current="page" data-api-only href="sources.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#sources"></use></svg><span>Sources</span></a>
+                <a data-api-only href="schema.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#schema"></use></svg><span>Schema</span></a>
+                <a data-api-only href="versions.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#versions"></use></svg><span>Versions</span></a>
+                <p class="nav-group-label">Developer tools</p>
+                <a href="explorer.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#explorer"></use></svg><span>Explorer</span></a>
+                <a href="playground.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#playground"></use></svg><span>Playground</span></a>
+                <a href="saved.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#saved"></use></svg><span>Saved &amp; history</span></a>
+            </nav>
+            <div class="sidebar-bottom">
+                <button class="text-button" type="button" data-reset>Reset demo</button>
+                <a class="back-link" href="index.html">Change role</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Source and endpoint form. -->
+    <main class="page-content narrow-content">
+        <a class="back-link" href="sources.html">← Back to sources</a>
+        <header class="page-heading compact-heading">
+            <div>
+                <p class="page-label">Source editor</p>
+                <h1 id="endpoint-title">Add a REST source</h1>
+                <p>Keep the form small: one source, its endpoints, and one sample response.</p>
+            </div>
+        </header>
+
+        <!-- Main source details form. -->
+        <form class="form-card" id="source-form">
+            <h2>Source details</h2>
+            <!-- These fields describe where the REST API lives. -->
+            <div class="form-grid">
+                <label>Name <input id="source-name" required placeholder="JSONPlaceholder API"></label>
+                <label>Base URL <input id="source-url" type="url" autocomplete="url" required placeholder="https://example.com"></label>
+            </div>
+            <!-- Mock is safe for demos; Live calls the public URL. -->
+            <label>Mode
+                <select id="source-mode">
+                    <option value="mock">Mock</option>
+                    <option value="live">Live</option>
+                </select>
+            </label>
+            <p class="form-message" id="source-message" role="status" aria-live="polite" aria-atomic="true"></p>
+            <button class="button" type="submit">Save source</button>
+        </form>
+
+        <!-- Existing endpoints are listed here by JavaScript. -->
+        <section class="form-card" aria-labelledby="endpoint-list-title">
+            <div class="section-heading-row">
+                <h2 id="endpoint-list-title">Endpoints</h2>
+                <span class="small-text" id="endpoint-count">0 endpoints</span>
+            </div>
+            <div class="endpoint-list" id="endpoint-list"></div>
+            <p class="empty-message" id="endpoint-empty">Save the source first, then add an endpoint below.</p>
+        </section>
+
+        <!-- Endpoint details form. -->
+        <form class="form-card" id="endpoint-form">
+            <h2 id="endpoint-form-title">Add endpoint</h2>
+            <!-- These fields describe one GET endpoint and its JSON response. -->
+            <div class="form-grid three-columns">
+                <label>Method
+                    <select id="endpoint-method">
+                        <option>GET</option>
+                    </select>
+                </label>
+                <label>Path <input id="endpoint-path" required placeholder="/users/{id}"></label>
+                <label>Resource name <input id="endpoint-resource" required placeholder="User"></label>
+            </div>
+            <!-- The textarea is the sample used by the schema transformer. -->
+            <label>Sample JSON
+                <textarea id="endpoint-sample" rows="13" required placeholder='{"id": 1, "name": "Ada"}'></textarea>
+            </label>
+            <div class="button-row">
+                <button class="button secondary-button" id="validate-endpoint" type="button">Validate JSON</button>
+                <button class="button" type="submit">Save endpoint</button>
+            </div>
+            <p class="form-message" id="endpoint-message" role="status" aria-live="polite" aria-atomic="true"></p>
+        </form>
+    </main>
+
+    <!-- The shared JavaScript handles validation and saving. -->
+    <script type="module" src="js/app.js?v=7"></script>
+</body>
+
+</html>

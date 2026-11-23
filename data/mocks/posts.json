@@ -1,0 +1,26 @@
+[
+    {
+        "userId": 1,
+        "id": 1,
+        "title": "A simple API guide",
+        "body": "A short post about building useful APIs."
+    },
+    {
+        "userId": 1,
+        "id": 2,
+        "title": "Schema design notes",
+        "body": "A short post about naming fields clearly."
+    },
+    {
+        "userId": 1,
+        "id": 3,
+        "title": "Working with REST data",
+        "body": "A short post about combining related data."
+    },
+    {
+        "userId": 2,
+        "id": 4,
+        "title": "Frontend data loading",
+        "body": "A short post about loading data for a page."
+    }
+]

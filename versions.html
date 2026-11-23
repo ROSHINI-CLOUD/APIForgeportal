@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page information and the shared beginner CSS file. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versions | APIForge Portal</title>
+    <link rel="stylesheet" href="index.css?v=9">
+</head>
+
+<body class="app-page" data-page="versions">
+    <!-- Shared API team navigation. -->
+    <aside class="sidebar">
+        <button class="sidebar-toggle" type="button" aria-controls="sidebar-content" aria-expanded="true" aria-label="Collapse navigation" hidden>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2.5" y="3.5" width="15" height="13" rx="2" />
+                <path d="M8 3.5v13" />
+            </svg>
+        </button>
+        <div class="sidebar-content" id="sidebar-content">
+            <a class="logo" href="index.html">APIForge <span>Portal</span></a>
+            <p class="sidebar-role" data-session-name>Demo user</p>
+            <nav class="side-nav" aria-label="Main navigation">
+                <p class="nav-group-label" data-api-only>API management</p>
+                <a data-api-only href="sources.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#sources"></use></svg><span>Sources</span></a>
+                <a data-api-only href="schema.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#schema"></use></svg><span>Schema</span></a>
+                <a class="active" aria-current="page" data-api-only href="versions.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#versions"></use></svg><span>Versions</span></a>
+                <p class="nav-group-label">Developer tools</p>
+                <a href="explorer.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#explorer"></use></svg><span>Explorer</span></a>
+                <a href="playground.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#playground"></use></svg><span>Playground</span></a>
+                <a href="saved.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#saved"></use></svg><span>Saved &amp; history</span></a>
+            </nav>
+            <div class="sidebar-bottom">
+                <button class="text-button" type="button" data-reset>Reset demo</button>
+                <a class="back-link" href="index.html">Change role</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Published version history. -->
+    <main class="page-content">
+        <header class="page-heading">
+            <div>
+                <p class="page-label">Schema history</p>
+                <h1>Published versions</h1>
+                <p>Review what changed before the frontend uses a new version.</p>
+            </div>
+        </header>
+        <section class="version-list" id="version-list" aria-live="polite"></section>
+    </main>
+
+    <!-- The shared JavaScript loads published versions. -->
+    <script type="module" src="js/app.js?v=7"></script>
+</body>
+
+</html>

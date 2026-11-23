@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page information and the shared beginner CSS file. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema | APIForge Portal</title>
+    <link rel="stylesheet" href="index.css?v=9">
+</head>
+
+<body class="app-page" data-page="schema">
+    <!-- Shared API team navigation. -->
+    <aside class="sidebar">
+        <button class="sidebar-toggle" type="button" aria-controls="sidebar-content" aria-expanded="true" aria-label="Collapse navigation" hidden>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2.5" y="3.5" width="15" height="13" rx="2" />
+                <path d="M8 3.5v13" />
+            </svg>
+        </button>
+        <div class="sidebar-content" id="sidebar-content">
+            <a class="logo" href="index.html">APIForge <span>Portal</span></a>
+            <p class="sidebar-role" data-session-name>Demo user</p>
+            <nav class="side-nav" aria-label="Main navigation">
+                <p class="nav-group-label" data-api-only>API management</p>
+                <a data-api-only href="sources.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#sources"></use></svg><span>Sources</span></a>
+                <a class="active" aria-current="page" data-api-only href="schema.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#schema"></use></svg><span>Schema</span></a>
+                <a data-api-only href="versions.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#versions"></use></svg><span>Versions</span></a>
+                <p class="nav-group-label">Developer tools</p>
+                <a href="explorer.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#explorer"></use></svg><span>Explorer</span></a>
+                <a href="playground.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#playground"></use></svg><span>Playground</span></a>
+                <a href="saved.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#saved"></use></svg><span>Saved &amp; history</span></a>
+            </nav>
+            <div class="sidebar-bottom">
+                <button class="text-button" type="button" data-reset>Reset demo</button>
+                <a class="back-link" href="index.html">Change role</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Generated schema screen. -->
+    <main class="page-content">
+        <header class="page-heading">
+            <div>
+                <p class="page-label">Schema builder</p>
+                <h1>Review the generated schema</h1>
+                <p id="schema-summary">Generated from the registered endpoint samples.</p>
+            </div>
+            <div class="button-row">
+                <button class="button secondary-button" id="generate-schema" type="button">Generate from sources</button>
+                <button class="button" id="publish-schema" type="button">Publish version</button>
+            </div>
+        </header>
+        <p class="small-text">Generate after adding or changing endpoints. This replaces the current draft with the latest samples.</p>
+
+        <!-- Sample JSON is the input; generated SDL is the output. -->
+        <section class="two-column schema-preview">
+            <article class="code-card">
+                <div class="section-heading-row">
+                    <h2>Sample JSON</h2>
+                    <span class="small-text">Input</span>
+                </div>
+                <pre id="sample-json"><code>Loading sample...</code></pre>
+            </article>
+            <article class="code-card">
+                <div class="section-heading-row">
+                    <h2>GraphQL-style schema</h2>
+                    <span class="small-text">Output</span>
+                </div>
+                <pre id="sdl-output"><code>Loading schema...</code></pre>
+            </article>
+        </section>
+
+        <!-- Notes explain values that need a human check. -->
+        <section class="form-card">
+            <h2>Inference notes</h2>
+            <ul class="note-list" id="schema-notes"></ul>
+        </section>
+
+        <!-- JavaScript creates one simple control row for each generated field. -->
+        <section class="form-card">
+            <div class="section-heading-row">
+                <h2>Review fields</h2>
+                <span class="small-text">Rename or hide a field</span>
+            </div>
+            <div id="schema-controls"></div>
+        </section>
+
+        <p class="form-message" id="schema-message" role="status" aria-live="polite" aria-atomic="true"></p>
+    </main>
+
+    <!-- The shared JavaScript creates the schema and handles publishing. -->
+    <script type="module" src="js/app.js?v=7"></script>
+</body>
+
+</html>

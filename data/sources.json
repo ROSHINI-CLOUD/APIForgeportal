@@ -1,0 +1,52 @@
+[
+    {
+        "id": "jsonplaceholder",
+        "name": "JSONPlaceholder (Users & Posts)",
+        "baseUrl": "https://jsonplaceholder.typicode.com",
+        "mode": "mock",
+        "endpoints": [
+            {
+                "id": "users",
+                "method": "GET",
+                "path": "/users",
+                "resource": "User",
+                "sampleFile": "data/mocks/users.json"
+            },
+            {
+                "id": "user",
+                "method": "GET",
+                "path": "/users/{id}",
+                "resource": "User",
+                "sampleFile": "data/mocks/users.json"
+            },
+            {
+                "id": "posts",
+                "method": "GET",
+                "path": "/posts",
+                "resource": "Post",
+                "sampleFile": "data/mocks/posts.json"
+            },
+            {
+                "id": "post",
+                "method": "GET",
+                "path": "/posts/{id}",
+                "resource": "Post",
+                "sampleFile": "data/mocks/posts.json"
+            },
+            {
+                "id": "comments",
+                "method": "GET",
+                "path": "/comments",
+                "resource": "Comment",
+                "sampleFile": "data/mocks/comments.json"
+            },
+            {
+                "id": "comments-by-post",
+                "method": "GET",
+                "path": "/comments?postId={id}",
+                "resource": "Comment",
+                "sampleFile": "data/mocks/comments.json"
+            }
+        ]
+    }
+]

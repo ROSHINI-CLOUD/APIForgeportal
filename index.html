@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page information and the shared beginner CSS file. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIForge Portal</title>
+    <link rel="stylesheet" href="index.css?v=9">
+</head>
+
+<body class="login-page" data-page="login">
+    <!-- Small brand header for the demo login screen. -->
+    <header class="simple-header">
+        <a class="logo" href="index.html">APIForge <span>Portal</span></a>
+        <span class="header-note">REST to GraphQL demo</span>
+    </header>
+
+    <!-- Main role picker screen. -->
+    <main class="login-main">
+        <!-- Short product introduction. -->
+        <section class="login-intro">
+            <p class="page-label">APIForge Portal</p>
+            <h1>Connect REST data with one simple query.</h1>
+            <p>Choose a demo role to manage API sources or explore the published schema.</p>
+        </section>
+
+        <!-- These two cards are the two users described in the PRD. -->
+        <section class="role-cards" aria-label="Choose a demo role">
+            <!-- API team role card. -->
+            <article class="role-card">
+                <span class="card-number">01</span>
+                <h2>API team</h2>
+                <p>Register REST sources, generate schemas, and publish changes.</p>
+                <button class="button" type="button" data-role="api">Continue as API team</button>
+            </article>
+
+            <!-- Frontend developer role card. -->
+            <article class="role-card light-card">
+                <span class="card-number">02</span>
+                <h2>Frontend developer</h2>
+                <p>Browse the schema, run a query, and copy a fetch example.</p>
+                <button class="button dark-button" type="button" data-role="frontend">Continue as frontend developer</button>
+            </article>
+        </section>
+
+        <!-- Reset is useful during a classroom demonstration. -->
+        <button class="text-button" type="button" data-reset>Reset demo data</button>
+        <p class="form-message" id="login-message" role="status" aria-live="polite" aria-atomic="true"></p>
+    </main>
+
+    <!-- The shared JavaScript starts the demo session after a role is selected. -->
+    <script type="module" src="js/app.js?v=7"></script>
+</body>
+
+</html>

@@ -1,0 +1,1223 @@
+/* APIForge Portal uses simple CSS so every part is easy to explain. */
+
+/* These colors are reused throughout the project. */
+/* These named colors keep repeated values easy to change in one place. */
+:root {
+    --background: #0d0d0c;
+    --surface: #1b1b19;
+    --surface-light: #f0e5d4;
+    --border: #3a3732;
+    --text: #f7f5ef;
+    --muted: #aaa69e;
+    --orange: #ee8248;
+    --green: #83bd86;
+    --red: #e37c73;
+    --panel-padding: 20px;
+    --panel-gap: 16px;
+}
+
+/* Resets browser spacing and makes width calculations easier. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sets the main background, text color, font, and line spacing. */
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* Removes the default underline from links. */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Gives headings a simple and consistent type style. */
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+}
+
+/* Makes buttons and form controls use the same font as the page. */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* Makes keyboard focus easy to see. */
+a:focus,
+button:focus-visible,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+}
+
+/* Styles the brand name used in every header and sidebar. */
+.logo {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* Uses orange for the important brand word. */
+.logo span,
+.page-label,
+.url,
+.accent-text {
+    color: var(--orange);
+}
+
+/* Styles the reusable cream action button. */
+.button {
+    background: var(--surface-light);
+    border: 1px solid var(--surface-light);
+    border-radius: 7px;
+    color: var(--background);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 11px 16px;
+    text-align: center;
+}
+
+/* Changes the main button color when the user hovers over it. */
+.button:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+/* Shows that an action is waiting for a result and cannot be repeated yet. */
+.button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+/* Uses a dark button on a light card. */
+.dark-button {
+    background: var(--background);
+    border-color: var(--background);
+    color: var(--text);
+}
+
+/* Gives a secondary action a clear border without making it bright. */
+.secondary-button {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text);
+}
+
+/* Styles small links that do not need a filled button. */
+.text-button {
+    background: none;
+    border: 0;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 4px 0;
+}
+
+/* Makes a text button orange when hovered. */
+.text-button:hover {
+    color: var(--orange);
+}
+
+/* Keeps two or more buttons on one line when there is room. */
+.button-row {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Styles the small orange label above main headings. */
+.page-label {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 13px;
+    text-transform: uppercase;
+}
+
+/* Styles quiet supporting text used across the app. */
+.small-text,
+.header-note,
+.sidebar-label {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Login screen */
+
+/* Places the small login header at the top of the page. */
+.simple-header {
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 6%;
+}
+
+/* Centers the login content and gives it comfortable space. */
+.login-main {
+    margin: auto;
+    max-width: 1060px;
+    padding: 100px 6% 120px;
+}
+
+/* Limits the login heading width for easy reading. */
+.login-intro {
+    max-width: 700px;
+}
+
+/* Styles the main login heading. */
+.login-intro h1 {
+    font-size: 64px;
+    letter-spacing: -3px;
+    margin-bottom: 22px;
+}
+
+/* Styles the login description. */
+.login-intro > p:last-child {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 560px;
+}
+
+/* Places the role cards next to each other. */
+.role-cards {
+    display: flex;
+    gap: 18px;
+    margin-top: 55px;
+}
+
+/* Styles each role card. */
+.role-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 28px;
+    width: 50%;
+}
+
+/* Shows the light card variation for the second role. */
+.light-card {
+    background: var(--surface-light);
+    color: var(--background);
+}
+
+/* Styles the small number on a role card. */
+.card-number {
+    background: var(--orange);
+    border-radius: 6px;
+    color: var(--background);
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 7px 9px;
+}
+
+/* Styles each role title. */
+.role-card h2 {
+    font-size: 27px;
+    margin: 30px 0 10px;
+}
+
+/* Styles each role description. */
+.role-card p {
+    color: var(--muted);
+    margin-bottom: 28px;
+    min-height: 48px;
+}
+
+/* Makes description text readable on the light card. */
+.light-card p {
+    color: #625e57;
+}
+
+/* Places the reset link below the role cards. */
+.login-main > .text-button {
+    margin-top: 25px;
+}
+
+/* Gives form actions a clear place to show what happened. */
+.form-message {
+    font-size: 13px;
+}
+
+/* Keeps empty message areas out of the layout until needed. */
+.form-message:empty {
+    position: absolute;
+}
+
+/* Uses green for a completed action. */
+.form-message.success {
+    color: var(--green);
+}
+
+/* Uses red for an action the user needs to correct or retry. */
+.form-message.error {
+    color: var(--red);
+}
+
+/* Uses orange while an action is in progress or needs attention. */
+.form-message.info {
+    color: var(--orange);
+}
+
+/* Gives the query result a readable state label. */
+.response-status {
+    white-space: nowrap;
+}
+
+.response-status.success {
+    color: var(--green);
+}
+
+.response-status.error {
+    color: var(--red);
+}
+
+.response-status.warning,
+.response-status.running {
+    color: var(--orange);
+}
+
+/* App shell */
+
+/* Places the sidebar and page content next to each other. */
+.app-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Creates the fixed-width left sidebar. */
+.sidebar {
+    align-self: flex-start;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    transition: width 300ms cubic-bezier(.2, .85, .3, 1.06);
+    width: 230px;
+}
+
+.sidebar-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+    padding: 24px 18px 16px;
+    width: 230px;
+}
+
+.sidebar-content .logo {
+    align-self: flex-start;
+    font-size: 16px;
+    margin-right: 36px;
+    white-space: nowrap;
+}
+
+.sidebar-toggle {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    cursor: pointer;
+    height: 34px;
+    position: absolute;
+    right: 15px;
+    top: 18px;
+    width: 34px;
+    z-index: 1;
+}
+
+.sidebar-toggle svg {
+    vertical-align: middle;
+}
+
+.sidebar-toggle:hover {
+    color: var(--text);
+}
+
+.sidebar.collapsed {
+    width: 66px;
+}
+
+.sidebar.collapsed .sidebar-content {
+    visibility: hidden;
+}
+
+.side-nav [hidden] {
+    display: none;
+}
+
+/* The selected role is plain text under the product name. */
+.sidebar-role {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Separates the page links from the logo. */
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 20px 0 12px;
+    overflow-y: auto;
+}
+
+/* Labels the two navigation groups without making them interactive. */
+.nav-group-label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 8px 12px 2px;
+    text-transform: uppercase;
+}
+
+/* Styles each sidebar link. */
+.side-nav a {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    color: var(--muted);
+    display: flex;
+    font-size: 14px;
+    gap: 11px;
+    min-height: 42px;
+    padding: 9px 12px;
+}
+
+.side-nav a span {
+    white-space: nowrap;
+}
+
+/* Highlights the current page and hovered links. */
+.side-nav a:hover,
+.side-nav a.active {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+/* Keeps the simple page icons the same size and stroke weight. */
+.nav-icon {
+    flex: 0 0 18px;
+    height: 18px;
+    width: 18px;
+}
+
+.side-nav a.active .nav-icon,
+.side-nav a:hover .nav-icon {
+    color: var(--orange);
+}
+
+/* Pushes user controls to the bottom of the sidebar. */
+.sidebar-bottom {
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+/* Adds space between the user name and small actions. */
+.sidebar-bottom .text-button,
+.back-link {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Styles the back link used by editor pages. */
+.back-link {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Changes the back link color on hover. */
+.back-link:hover {
+    color: var(--text);
+}
+
+/* Gives every app page a readable maximum width. */
+.page-content {
+    margin: 0 auto;
+    max-width: 1160px;
+    min-width: 0;
+    padding: 32px 32px 56px;
+    width: 100%;
+}
+
+/* Keeps form pages narrower than data-heavy pages. */
+.narrow-content {
+    max-width: 1050px;
+}
+
+/* Aligns a page title and its main action. */
+.page-heading,
+.section-heading-row {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Adds space below each page heading. */
+.page-heading {
+    margin-bottom: 24px;
+}
+
+.page-heading > .button {
+    flex-shrink: 0;
+}
+
+/* Reduces the heading space on the endpoint editor. */
+.compact-heading {
+    margin-top: 25px;
+}
+
+/* Styles large page headings. */
+.page-heading h1 {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
+}
+
+/* Styles page heading descriptions. */
+.page-heading p:last-child {
+    color: var(--muted);
+    max-width: 620px;
+}
+
+/* Search box */
+
+/* Styles the reusable search field. */
+.search-box {
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    color: var(--muted);
+    display: flex;
+    gap: 8px;
+    margin-bottom: 28px;
+    max-width: 430px;
+    padding: 12px;
+}
+
+/* Makes the search symbol easy to see. */
+.search-box span {
+    font-size: 20px;
+}
+
+/* Makes the search input fill the box. */
+.search-box input {
+    background: transparent;
+    border: 0;
+    color: var(--text);
+    outline: 0;
+    width: 100%;
+}
+
+/* Keeps the search hint muted. */
+.search-box input::placeholder {
+    color: var(--muted);
+}
+
+/* Source cards */
+
+/* Places registered sources in a simple responsive grid. */
+.source-grid {
+    display: grid;
+    gap: var(--panel-gap);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Styles one source card. */
+.source-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: var(--panel-padding);
+}
+
+/* Highlights a source card on hover. */
+.source-card:hover,
+.version-card:hover,
+.explorer-type:hover,
+.saved-item:hover {
+    border-color: var(--orange);
+}
+
+/* Aligns the source icon and sample label. */
+.source-top,
+.source-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Styles the source letter icon. */
+.source-icon {
+    align-items: center;
+    background: var(--orange);
+    border-radius: 7px;
+    color: var(--background);
+    display: flex;
+    font-weight: bold;
+    height: 38px;
+    justify-content: center;
+    width: 38px;
+}
+
+/* Styles quiet source status text. */
+.sample {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Styles the source name. */
+.source-card h2 {
+    font-size: 24px;
+    margin: 16px 0 4px;
+}
+
+/* Styles the source URL. */
+.source-card .url {
+    font-size: 14px;
+}
+
+/* Shows endpoint count and source mode. */
+.source-info {
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    gap: 14px;
+    justify-content: flex-start;
+    margin-top: 16px;
+    padding-top: 12px;
+}
+
+/* Keeps source actions aligned at the bottom of a card. */
+.source-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+/* Empty messages are quiet but still visible. */
+.empty-message {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Forms and code panels */
+
+/* Styles a reusable content card for forms and tables. */
+.form-card,
+.code-card,
+.version-card,
+.explorer-type,
+.saved-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-top: var(--panel-gap);
+    min-width: 0;
+    padding: var(--panel-padding);
+}
+
+/* Styles headings inside cards. */
+.form-card h2,
+.code-card h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.section-heading-row {
+    margin-bottom: 12px;
+}
+
+.section-heading-row h2 {
+    margin-bottom: 0;
+}
+
+#source-form > button,
+#endpoint-form > .button-row,
+.form-card > .form-message:not(:empty) {
+    margin-top: 12px;
+}
+
+/* Creates a two-column form on wide screens. */
+.form-grid {
+    display: grid;
+    gap: 17px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 17px;
+}
+
+/* Creates three small columns for endpoint details. */
+.three-columns {
+    grid-template-columns: 130px 1fr 1fr;
+}
+
+/* Styles labels and places their controls below them. */
+label {
+    color: var(--muted);
+    display: block;
+    font-size: 13px;
+}
+
+/* Styles text inputs, selects, and textareas. */
+input,
+select,
+textarea {
+    background: #11110f;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    display: block;
+    margin-top: 7px;
+    padding: 11px;
+    width: 100%;
+}
+
+/* Lets users type larger JSON and GraphQL examples. */
+textarea,
+pre {
+    font-family: "Courier New", monospace;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Keeps code blocks scrollable instead of breaking the layout. */
+pre {
+    background: #11110f;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    color: #e8dfd1;
+    line-height: 1.55;
+    max-height: 520px;
+    overflow: auto;
+    padding: 18px;
+    white-space: pre-wrap;
+}
+
+/* Makes the JSON and SDL cards share the available width. */
+.two-column {
+    display: grid;
+    gap: var(--panel-gap);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Shows small notes below a card title. */
+.note-list {
+    color: var(--muted);
+    display: grid;
+    gap: 8px;
+    padding-left: 20px;
+}
+
+/* Gives each endpoint row a clear border. */
+.endpoint-row,
+.saved-item,
+.call-row,
+.control-row {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+}
+
+/* Removes the bottom line from the last simple row. */
+.endpoint-row:last-child,
+.call-row:last-child,
+.control-row:last-child {
+    border-bottom: 0;
+}
+
+/* Aligns endpoint details and its edit button. */
+.endpoint-row,
+.saved-item,
+.call-row {
+    align-items: center;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+/* Styles endpoint method labels. */
+.method {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 42px;
+}
+
+/* Makes endpoint path and resource text readable. */
+.endpoint-details,
+.saved-details {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.saved-item {
+    padding: 12px;
+}
+
+/* Styles smaller endpoint information. */
+.endpoint-details p,
+.saved-details p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+/* Displays schema review controls as simple rows. */
+.type-control {
+    border-top: 1px solid var(--border);
+    padding: 18px 0;
+}
+
+/* Styles the type name in the review list. */
+.type-control h3 {
+    color: var(--orange);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Aligns a field name, type, and actions. */
+.control-row {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+}
+
+/* Lets the field name use most of the row. */
+.control-row strong {
+    flex: 1;
+}
+
+/* Styles hidden fields without deleting them from the review. */
+.hidden-field {
+    color: var(--muted);
+    text-decoration: line-through;
+}
+
+/* Version cards */
+
+/* Aligns version number and date. */
+.version-card header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+/* Styles the version title. */
+.version-card h2 {
+    font-size: 23px;
+}
+
+/* Styles the version date. */
+.version-date {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Styles the list of version changes. */
+.change-list {
+    color: var(--muted);
+    display: grid;
+    gap: 8px;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+/* Explorer */
+
+/* Gives each type its own readable section. */
+.explorer-type {
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Styles the type heading strip. */
+.type-heading {
+    align-items: center;
+    background: #151513;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 22px;
+}
+
+/* Styles the field table header and rows. */
+.field-row {
+    align-items: center;
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: 15px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr) auto;
+    overflow-wrap: anywhere;
+    padding: 12px var(--panel-padding);
+}
+
+/* Styles muted field information. */
+.field-row span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Playground */
+
+.playground-heading {
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+}
+
+.playground-heading h1 {
+    font-size: 36px;
+    letter-spacing: -1px;
+    margin-bottom: 6px;
+}
+
+/* Places the query editor beside its response. */
+.playground-grid {
+    display: grid;
+    gap: var(--panel-gap);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.response-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Keeps the query card aligned with the response card. */
+.query-card,
+.response-card {
+    margin-top: 0;
+}
+
+/* Gives the query textarea a code-editor look without advanced CSS. */
+.query-editor,
+#query-response {
+    background: #11110f;
+    font-size: 14px;
+    height: 300px;
+    line-height: 1.55;
+    margin-top: 0;
+    padding: 12px;
+}
+
+#query-response {
+    flex: 1 1 300px;
+    max-height: none;
+    overflow-wrap: anywhere;
+}
+
+#query-response .json-output {
+    white-space: pre;
+    overflow-wrap: normal;
+}
+
+.json-key {
+    color: #a5c6fb;
+}
+
+.json-string {
+    color: #a6d3a0;
+}
+
+.json-number {
+    color: #e9bd87;
+}
+
+.json-literal {
+    color: #d0b5ed;
+}
+
+.query-card button[type="submit"] {
+    transition: background-color 120ms, transform 120ms;
+}
+
+.query-card button[type="submit"]:active:not(:disabled) {
+    background: #d6bd9e;
+    box-shadow: inset 0 2px 3px #0004;
+    transform: translateY(2px);
+}
+
+.query-card input:focus,
+.query-editor:focus {
+    outline: 1px solid #858580;
+    outline-offset: 1px;
+}
+
+/* Separates the query actions from the text editor. */
+.query-card .button-row {
+    margin-top: 12px;
+}
+
+/* Gives the secondary copy action its own row below the main buttons. */
+.query-secondary-actions {
+    margin-top: 12px;
+}
+
+/* Keeps the gateway note and result message away from the buttons. */
+.query-card > .form-message:not(:empty),
+#save-query-fields {
+    margin-top: 8px;
+}
+
+/* Styles REST call details. */
+.call-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.call-row:first-child {
+    padding-top: 0;
+}
+
+.call-row:last-child {
+    padding-bottom: 0;
+}
+
+.call-row > div {
+    min-width: 0;
+}
+
+.call-request {
+    align-items: baseline;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 3px;
+}
+
+.call-request code {
+    color: #dce4f0;
+    overflow-wrap: anywhere;
+}
+
+.call-separator {
+    color: var(--muted);
+}
+
+.call-param {
+    color: #a5c6fb;
+}
+
+.call-value {
+    color: #e9bd87;
+}
+
+/* Styles successful and fallback call labels. */
+.call-status {
+    color: var(--green);
+    font-size: 12px;
+}
+
+/* Tables */
+
+/* Allows a wide table to scroll on a phone. */
+.table-wrap {
+    overflow-x: auto;
+}
+
+/* Makes the history table use all available space. */
+table {
+    border-collapse: collapse;
+    min-width: 600px;
+    width: 100%;
+}
+
+/* Styles table headings and cells. */
+th,
+td {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 10px;
+    text-align: left;
+}
+
+/* Keeps table headings quiet. */
+th {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* Small responsive layout */
+
+/* Uses one column when there is not enough room for side-by-side panels. */
+@media (max-width: 900px) {
+    /* Turns the sidebar into a top navigation bar. */
+    .app-page {
+        display: block;
+    }
+
+    /* Reduces the sidebar height on tablets. */
+    .sidebar,
+    .sidebar.collapsed {
+        border-bottom: 1px solid var(--border);
+        border-right: 0;
+        height: auto;
+        min-height: auto;
+        position: relative;
+        width: 100%;
+    }
+
+    .sidebar-content {
+        padding: 20px 16px 12px;
+        width: 100%;
+    }
+
+    .sidebar.collapsed .sidebar-content {
+        height: 82px;
+        overflow: hidden;
+    }
+
+    /* Places the page links in a row on tablets. */
+    .side-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 12px 0 8px;
+    }
+
+    .side-nav a {
+        gap: 6px;
+        min-height: 38px;
+        padding: 6px 8px;
+    }
+
+    .nav-group-label {
+        display: none;
+    }
+
+    /* Puts the user controls below the links. */
+    .sidebar-bottom {
+        align-items: center;
+        display: flex;
+        gap: 16px;
+        margin-top: 0;
+    }
+
+    .sidebar-bottom .text-button,
+    .sidebar-bottom .back-link {
+        margin-top: 0;
+    }
+
+    /* Stacks the main product panels. */
+    .two-column,
+    .playground-grid,
+    .source-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sidebar,
+    .query-card button[type="submit"] {
+        transition: none;
+    }
+
+    .query-card button[type="submit"]:active:not(:disabled) {
+        transform: none;
+    }
+}
+
+/* Phone layout: stack cards and reduce text sizes. */
+@media (max-width: 600px) {
+    :root {
+        --panel-padding: 16px;
+        --panel-gap: 12px;
+    }
+
+    /* Reduces page padding on small screens. */
+    .page-content,
+    .login-main {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .page-content {
+        padding-top: 24px;
+    }
+
+    /* Allows headings and actions to wrap naturally. */
+    .page-heading,
+    .simple-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /* Makes the login heading fit a phone. */
+    .login-intro h1 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    /* Stacks the role cards. */
+    .role-cards,
+    .form-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
+    /* Makes each role card use the full width. */
+    .role-card {
+        width: 100%;
+    }
+
+    /* Makes page headings smaller on phones. */
+    .page-heading h1 {
+        font-size: 30px;
+    }
+
+    /* Stacks endpoint row information when necessary. */
+    .endpoint-row,
+    .saved-item {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    /* Gives each field row fewer columns on phones. */
+    .field-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Makes the last field detail use the whole row. */
+    .field-row span:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    /* Lets the endpoint form use one column on phones. */
+    .three-columns {
+        grid-template-columns: 1fr;
+    }
+
+    /* Keeps schema review rows readable on phones. */
+    .control-row {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}

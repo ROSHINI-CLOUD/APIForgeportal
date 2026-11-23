@@ -1,0 +1,16 @@
+[
+    {
+        "postId": 1,
+        "id": 1,
+        "name": "A reader",
+        "email": "reader@example.com",
+        "body": "This example is easy to follow."
+    },
+    {
+        "postId": 2,
+        "id": 2,
+        "name": "Another reader",
+        "email": "another@example.com",
+        "body": "The schema notes are helpful."
+    }
+]

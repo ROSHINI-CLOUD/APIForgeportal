@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page information and the shared beginner CSS file. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground | APIForge Portal</title>
+    <link rel="stylesheet" href="index.css?v=9">
+</head>
+
+<body class="app-page" data-page="playground">
+    <!-- Shared product navigation. -->
+    <aside class="sidebar">
+        <button class="sidebar-toggle" type="button" aria-controls="sidebar-content" aria-expanded="true" aria-label="Collapse navigation" hidden>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2.5" y="3.5" width="15" height="13" rx="2" />
+                <path d="M8 3.5v13" />
+            </svg>
+        </button>
+        <div class="sidebar-content" id="sidebar-content">
+            <a class="logo" href="index.html">APIForge <span>Portal</span></a>
+            <p class="sidebar-role" data-session-name>Demo user</p>
+            <nav class="side-nav" aria-label="Main navigation">
+                <p class="nav-group-label" data-api-only>API management</p>
+                <a data-api-only href="sources.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#sources"></use></svg><span>Sources</span></a>
+                <a data-api-only href="schema.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#schema"></use></svg><span>Schema</span></a>
+                <a data-api-only href="versions.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#versions"></use></svg><span>Versions</span></a>
+                <p class="nav-group-label">Developer tools</p>
+                <a href="explorer.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#explorer"></use></svg><span>Explorer</span></a>
+                <a class="active" aria-current="page" href="playground.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#playground"></use></svg><span>Playground</span></a>
+                <a href="saved.html"><svg class="nav-icon" viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><use href="nav-icons.svg#saved"></use></svg><span>Saved &amp; history</span></a>
+            </nav>
+            <div class="sidebar-bottom">
+                <button class="text-button" type="button" data-reset>Reset demo</button>
+                <a class="back-link" href="index.html">Change role</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Query playground content. -->
+    <main class="page-content">
+        <header class="page-heading playground-heading">
+            <div>
+                <h1>Playground</h1>
+                <p>Run a query and inspect its response and REST calls.</p>
+            </div>
+            <a class="button secondary-button" href="explorer.html">Browse schema</a>
+        </header>
+
+        <!-- The left card accepts the query; the right card shows the response. -->
+        <section class="playground-grid">
+            <form class="form-card query-card" id="query-form">
+                <div class="section-heading-row">
+                    <h2>Query</h2>
+                    <span class="small-text" id="query-mode-label">Mock mode</span>
+                </div>
+                <!-- This textarea contains the small supported query language. -->
+                <textarea class="query-editor" id="query-input" aria-label="Query" rows="13" spellcheck="false">{
+  user(id: 1) {
+    name
+    address {
+      city
+    }
+    posts {
+      title
+    }
+  }
+}</textarea>
+                <div class="button-row">
+                    <button class="button" type="submit">Run query</button>
+                    <button class="button secondary-button" id="save-query" type="button" aria-controls="save-query-fields" aria-expanded="false">Save query</button>
+                </div>
+                <div id="save-query-fields" hidden>
+                    <label>Query name <input id="query-name" placeholder="Profile card"></label>
+                    <div class="button-row">
+                        <button class="button secondary-button" id="confirm-save-query" type="button">Save</button>
+                        <button class="text-button" id="cancel-save-query" type="button">Cancel</button>
+                    </div>
+                </div>
+                <p class="form-message" id="query-message" role="status" aria-atomic="true"></p>
+                <div class="query-secondary-actions">
+                    <button class="text-button" id="copy-fetch" type="button">Copy gateway example</button>
+                    <p class="small-text">Template for a deployed GraphQL gateway.</p>
+                </div>
+            </form>
+
+            <article class="code-card response-card">
+                <div class="section-heading-row">
+                    <h2>Response</h2>
+                    <span class="small-text response-status" id="response-status" role="status" aria-live="polite">Waiting to run</span>
+                </div>
+                <pre id="query-response" tabindex="0" aria-label="Query response"><code>Run a query to see the response.</code></pre>
+            </article>
+        </section>
+
+        <!-- Calls and field counts explain what the browser did. -->
+        <section class="form-card">
+            <div class="section-heading-row">
+                <h2>REST calls</h2>
+                <span class="small-text" id="call-count" role="status" aria-live="polite">0 calls</span>
+            </div>
+            <div class="call-list" id="call-list">
+                <p class="empty-message">No calls yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- The shared JavaScript parses and runs the supported query subset. -->
+    <script type="module" src="js/app.js?v=7"></script>
+</body>
+
+</html>

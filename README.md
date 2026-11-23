@@ -108,7 +108,7 @@ The login is a demo role switcher, not a real account system.
 
 | Layer | Choice | Purpose |
 | --- | --- | --- |
-| UI | HTML5, CSS3, Bootstrap 5.3 | Responsive screens, forms, cards, tabs, tables, and modals |
+| UI | HTML5 and simple CSS3 | Responsive screens, forms, cards, tables, and code panels |
 | Logic | Vanilla JavaScript | DOM events, validation, parsing, transformation, and resolution |
 | Persistence | Browser `localStorage` | Sources, drafts, schema versions, saved queries, and history |
 | Seed data | JSON files | Offline users, posts, and comments |
@@ -131,19 +131,14 @@ apiforge-portal/
 ├── explorer.html
 ├── playground.html
 ├── saved.html
-├── relations.html
-├── css/
-│   └── styles.css
+├── index.css
 ├── js/
 │   ├── storage.js       # localStorage and seeded data
 │   ├── session.js       # demo role/session state
-│   ├── transform.js     # sample JSON → schema
-│   ├── sdl.js           # schema text generation
-│   ├── diff.js          # schema version comparison
+│   ├── transform.js     # sample JSON → schema and SDL
 │   ├── parser.js        # supported query subset
 │   ├── resolver.js      # query → REST calls → response
-│   ├── components.js    # reusable UI components
-│   └── pages/           # page-specific behaviour
+│   └── app.js           # page events and small UI renderers
 └── data/
     ├── sources.json
     └── mocks/
@@ -210,7 +205,7 @@ devices or users.
 
 | Week | Focus | Milestone |
 | --- | --- | --- |
-| 1 | HTML, Bootstrap, JSON, REST/GraphQL basics | Static responsive screens |
+| 1 | HTML, simple CSS, JSON, REST/GraphQL basics | Static responsive screens |
 | 2 | Validation, recursion, transformation, localStorage | Schema generation and Explorer |
 | 3 | Parser, resolver, fetch, errors, relations | Working unified Playground |
 | 4 | Accessibility, testing, polish, deployment | Deployed demo, README, and demo video |
