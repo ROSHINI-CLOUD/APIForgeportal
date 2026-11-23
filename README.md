@@ -2,25 +2,16 @@
 
 # APIForge Portal
 
-**One query. Multiple REST APIs.**
+[![APIForge Portal. One query, multiple REST APIs.](docs/apiforge-cover.svg)](https://apiforgeportal.vercel.app/)
 
 Generate a GraphQL-style schema from sample REST responses, then query only the fields your app needs.
 
 [![Open the live demo](https://img.shields.io/badge/LIVE_DEMO-APIForge_Portal-F47935?style=for-the-badge&labelColor=080808)](https://apiforgeportal.vercel.app/)
 [![Frontend stack](https://img.shields.io/badge/STACK-HTML_%C2%B7_CSS_%C2%B7_JavaScript-26201D?style=for-the-badge&labelColor=080808)](#project-structure)
 
-[Quick start](#quick-start) · [Example query](#example-query) · [Project structure](#project-structure) · [Project docs](#project-docs)
+[Quick start](#quick-start) · [Example query](#example-query) · [How it works](#how-it-works) · [Project structure](#project-structure)
 
 </div>
-
-## What you can do
-
-| Demo role | Workflow |
-| --- | --- |
-| **API team** | Register REST sources and sample JSON, generate a draft schema, rename or hide fields, then publish a version with a change list. |
-| **Frontend developer** | Search the published schema, open a starter query from Explorer, run it in Playground, and save useful queries. |
-
-The Playground shows formatted JSON beside the query and lists the REST calls underneath, with their paths, modes, and field counts. It keeps the last 20 query runs. The landing page uses a static orange glow, dark cards, and a responsive layout built with plain CSS.
 
 ## Quick start
 
@@ -57,7 +48,20 @@ GET /users/1
 GET /posts?userId=1
 ~~~
 
-The bundled sample returns Leanne Graham, Gwenborough, and three post titles. The seeded User–Post relationship is what turns the nested selection into a second REST lookup.
+The response includes Leanne Graham, Gwenborough, and three post titles. The seeded relationship between users and posts turns the nested selection into the second REST lookup.
+
+![The query is parsed and resolved into two REST lookups before returning the selected fields.](docs/query-flow.svg)
+
+## How it works
+
+| Demo role | Workflow |
+| --- | --- |
+| **API team** | Register REST sources and sample JSON, generate a draft schema, rename or hide fields, then publish a version with a change list. |
+| **Frontend developer** | Search the published schema, open a starter query from Explorer, run it in Playground, and save useful queries. |
+
+The Playground shows formatted JSON beside the query and lists the REST calls underneath, with their paths, modes, and field counts. It keeps the last 20 query runs.
+
+![API team and frontend developer workflows connect through APIForge’s browser-based schema builder and query resolver.](docs/apiforge-architecture.svg)
 
 ## Mock mode and Live mode
 
@@ -85,4 +89,3 @@ For a code walkthrough, start with the sample query and follow it from the parse
 
 - [Mini product requirements](docs/APIForge-Portal-Mini-PRD.md)
 - [Full product requirements](docs/APIForge-Portal-PRD.md)
-- [Architecture diagram](docs/apiforge-architecture.svg) and [query flow diagram](docs/query-flow.svg)
