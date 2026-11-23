@@ -82,6 +82,7 @@ This browser-only demo supports nested selections, an optional query name, and o
 | [js/transform.js](js/transform.js) | Infers schema types from JSON and creates the schema preview |
 | [js/parser.js](js/parser.js), [js/resolver.js](js/resolver.js) | Reads query syntax, resolves REST calls, and returns selected fields |
 | [data/](data/) | JSON source definitions and mock responses |
+| [nav-icons.svg](nav-icons.svg) | Shared icons for the landing page and sidebar |
 
 For a code walkthrough, start with the sample query and follow it from the parser, through the resolver, to the response and call list in Playground.
 
