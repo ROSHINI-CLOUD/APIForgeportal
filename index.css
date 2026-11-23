@@ -169,6 +169,10 @@ textarea:focus {
 
 /* Centers the login content and gives it comfortable space. */
 .login-main {
+    /* Warm light at the top with a faint texture underneath. */
+    background:
+        radial-gradient(ellipse at 24% 8%, #ee82482b, transparent 60%) top / 100% 480px no-repeat,
+        repeating-linear-gradient(120deg, #ffffff04 0 1px, transparent 1px 5px) top / 100% 280px no-repeat;
     margin: auto;
     max-width: 1060px;
     padding: 100px 6% 120px;
