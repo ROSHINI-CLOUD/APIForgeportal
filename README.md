@@ -81,6 +81,7 @@ This browser-only demo supports nested selections, an optional query name, and o
 | [js/app.js](js/app.js), [js/session.js](js/session.js), [js/storage.js](js/storage.js) | Page events, demo roles, and browser persistence |
 | [js/transform.js](js/transform.js) | Infers schema types from JSON and creates the schema preview |
 | [js/parser.js](js/parser.js), [js/resolver.js](js/resolver.js) | Reads query syntax, resolves REST calls, and returns selected fields |
+| [nav-icons.svg](nav-icons.svg) | Shared icons for the landing page and sidebar |
 | [data/](data/) | JSON source definitions and mock responses |
 
 For a code walkthrough, start with the sample query and follow it from the parser, through the resolver, to the response and call list in Playground.
